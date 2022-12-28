@@ -1,40 +1,42 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-//模拟实现srlen
+//模拟实现 strcmp--字符串比较函数
 #include<stdio.h>
+#include<assert.h>
 #if 0
-//1.定义整型变量进行计数
-int my_strlen(char* str)
+//1.指针方式
+int my_strcmp(const char* str1,const char* str2)
 {
-	int count = 0;
-	while (*str++)
+	assert(str1 && str2);   //检查指针是否合法
+	while (*str1 == *str2)
 	{
-		count++;
+		if (*str1 == '\0') //判断循环是否到达'\0'
+			return 0;
+		str1++;
+		str2++;
 	}
-	return count;
-}
-
-//2.采用递归的方法
-int my_strlen(char* str)
-{
-	if (*str)
-		return 1 + my_strlen(str + 1);
-	else
-		return 0;
+	return (*str1 - *str2);//如果不相等则返回ASCC码值；
 }
 #endif
-//3.利用指针减指针的方法
-int my_strlen(char* str)
+//2.数组方式
+int my_strcmp(const char str1[], const char str2[])//将字符串初始化为数组形式
 {
-	char* title = str;
-	while (*str++)          //找到字符串的尾部
-		;
-	return str - 1 - title;//str指向了‘\0’之后的那个地址所以需要减一
+	int i;
+	for ( i = 0; str1[i] == str2[i]; i++)
+	{
+		if (str1[i] == '\0')
+			return 0;
+	}
+	return (str1[i] - str2[i]);
 }
 int main()
 {
-	char arr[20] = "abcdefg";
-	int ret = my_strlen(arr);
-	printf("%d\n", ret);
+	char* str1 = "abcde";
+	char* str2 = "abcde";
+	int ret = my_strcmp(str1, str2);
+	if (ret == 0)
+		printf("相同\n");
+	else
+		printf("不同\n");
 	return 0;
 }
