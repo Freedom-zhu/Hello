@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 //模拟实现memmove
 //考虑覆盖拷贝问题  第三个参数的单位为字节
+//
 #include<stdio.h>
 #include<assert.h>
 void* my_memmove(void* dest, const void* src, int count)
