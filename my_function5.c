@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
-//Ä£ÄâÊµÏÖmemmove
-//¿¼ÂÇ¸²¸Ç¿½±´ÎÊÌâ
+//æ¨¡æ‹Ÿå®ç°memmove
+//è€ƒè™‘è¦†ç›–æ‹·è´é—®é¢˜  ç¬¬ä¸‰ä¸ªå‚æ•°çš„å•ä½ä¸ºå­—èŠ‚
 #include<stdio.h>
 #include<assert.h>
 void* my_memmove(void* dest, const void* src, int count)
 {
 	assert(dest && src);
 	void* ret = dest;
-	if (src > dest)//Ë³Ë³Ğò
+	if (src > dest)//é¡ºé¡ºåº
 	{
 		while (count--)
 		{
@@ -18,7 +18,7 @@ void* my_memmove(void* dest, const void* src, int count)
 	}
 	else
 	{
-		//ÄæË³Ğò
+		//é€†é¡ºåº
 		while (count--)
 		{
 			*((char*)dest + count) = *((char*)src + count);
