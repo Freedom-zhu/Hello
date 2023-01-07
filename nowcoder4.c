@@ -4,10 +4,10 @@
 //输出描述：一行，用“日/月/年”格式输出日期。
 #include<stdio.h>
 
-typedef struct day_t Pday_t;
-typedef void (*TInitDay)(Pday_t* day);
-typedef void (*TSetDay)(Pday_t* day, int y, int m, int d);
-typedef void (*TShowDay)(Pday_t* day);
+typedef struct day_t Pday_t;//重新定义结构体名字
+typedef void (*TInitDay)(Pday_t* day);//定义函数指针类型
+typedef void (*TSetDay)(Pday_t* day, int y, int m, int d);//定义函数指针类型
+typedef void (*TShowDay)(Pday_t* day);//定义函数指针类型
 
 struct day_t //Pday-t
 {
