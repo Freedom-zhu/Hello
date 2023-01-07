@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
-//�����������
-//����������һ�У������������ÿո�ָ����ֱ��ʾ�ꡢ�¡��ա�
-//���������һ�У��á���/��/�ꡱ��ʽ������ڡ�
+//定义电子日历
+//输入描述：一行，三个整数，用空格分隔，分别表示年、月、日。
+//输出描述：一行，用“日/月/年”格式输出日期。
 #include<stdio.h>
 
 typedef struct day_t Pday_t;
@@ -19,26 +19,26 @@ struct day_t //Pday-t
     TShowDay show;
 };
 
-void day_init(Pday_t* day)//TInitDay   ��ʼ��
+void day_init(Pday_t* day)//TInitDay   初始化
 {
     day->Year = 0;
     day->Day = 0;
     day->Month = 0;
 }
 
-void day_set(Pday_t* day, int y, int m, int d)//TSetDay   ����
+void day_set(Pday_t* day, int y, int m, int d)//TSetDay   设置
 {
     day->Year = y;
     day->Month = m;
     day->Day = d;
 }
 
-void day_show(Pday_t* day) //TShowDay   ��ӡ
+void day_show(Pday_t* day) //TShowDay   打印
 {
     printf("%d/%d/%d", day->Day, day->Month, day->Year);
 }
 
-Pday_t M_day = 
+Pday_t M_day =  //定义结构体struct day-t（Pday-t）的结构体变量M-day
 {
     .init = day_init,
     .set = day_set,
