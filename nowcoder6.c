@@ -13,14 +13,14 @@
 //int main()
 //{
 //    int n = 0;
-//   /* scanf("%d", &n);//cÓïÑÔ²»ÔÊĞíÕâÑù¶¨Òåarr[n]ÖĞµÄn±ØĞëÎª³£Á¿²»ÄÜÎª±äÁ¿
+//   /* scanf("%d", &n);//cè¯­è¨€ä¸å…è®¸è¿™æ ·å®šä¹‰arr[n]ä¸­çš„nå¿…é¡»ä¸ºå¸¸é‡ä¸èƒ½ä¸ºå˜é‡
 //    BOOK arr[n];*/
 //    for (int i = 0; i < n; i++)
 //    {
 //        scanf("%s %d", &arr[i].name, &arr[i].price);
 //    }
 //    int sz = sizeof(arr) / sizeof(arr[0]);
-//    qsort(arr, sz, sizeof(arr[0]), cmp_by_price);//¿ìÅÅ
+//    qsort(arr, sz, sizeof(arr[0]), cmp_by_price);//å¿«æ’
 //    for (int i = 0; i < n; i++)
 //    {
 //        printf("%s\n", arr[i].name);
@@ -28,8 +28,8 @@
 //    return 0;
 //}
 
-#include <stdio.h>
-#include <string.h>
+#include <stdio.h>//è¾“å…¥è¦æ’åºçš„æ•°é‡ å†è¾“å…¥æ’åºçš„åå­—å’Œä»·æ ¼  
+#include <string.h>//è¾“å‡ºç»“æœä¸ºæŒ‰ä»·æ ¼æ’åºçš„åå­—
 typedef struct book {
     char name[100];
     int price;
@@ -43,7 +43,7 @@ int main()
     {
         scanf("%s %d", &(book[i].name), &(book[i].price));
     }
-    for (int i = 1; i < n; i++)
+    for (int i = 1; i < n; i++)//ç±»ä¼¼äºå†’æ³¡æ’åº
     {
         for (int j = 0; j < n - i; j++)
         {
