@@ -1,297 +1,101 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-//°Ë»ÊºóÎÊÌâ£¨»ØËİËã·¨£©
-//#include<stdio.h>
-//#define N 8
-//void Init(void);
-//void Show(void);
-//int Check(int row, int col);
-//void Find(int row);
-//char board[N + 2][N + 2];//¶¨ÒåÒ»¸öÆåÅÌ8*8
-//int count = 0;
-//struct Pos
-//{
-//	int yos;//ĞĞÆ«ÒÆÁ¿
-//	int xos;//ÁĞÆ«ÒÆÁ¿
-//};
-//struct Pos pos[3] = { {-1,-1},{-1,0},{-1,1} };
-//int main()
-//{
-//	Init();
-//	Find(1);
-//	system("pause");
-//	return 0;
-//}
-//void Init(void)//³õÊ¼»¯ÆåÅÌ
-//{
-//	for (int row = 0; row < N + 2; row++)
-//	{
-//		for (int col = 0; col < N + 2; col++)
-//		{
-//			board[0][col] = '#';
-//			board[N + 1][col] = '#';
-//			board[row][0] = '#';
-//			board[row][N + 1] = '#';
-//		}
-//	}
-//	for (int i = 1; i <= N; i++)
-//	{
-//		for (int j = 1; j <= N; j++)
-//		{
-//			board[i][j] = ' ';
-//		}
-//	}
-//}
-//void Show(void)//´òÓ¡ÆåÅÌ
-//{
-//	for (int i = 0; i < N + 2; i++)
-//	{
-//		for (int j = 0; j < N + 2; j++)
-//		{
-//			printf("%c", board[i][j]);
-//		}
-//		printf("\n");
-//	}
-//}
-//int Check(int row, int col)//¼ì²é¸ÃÎ»ÖÃÊÇ·ñÄÜ·ÅÖÃ
-//{
-//	int ret = 1;
-//	int nr;
-//	int nc;
-//	for (int i = 0; i < 3 && ret; i++)
-//	{
-//		nr = row;
-//		nc = col;
-//		while (ret && board[nr][nc] != '#')
-//		{
-//			if (board[nr][nc] == '*')
-//			{
-//				ret = 0;
-//				break;
-//			}
-//			nr = nr + pos[i].yos;
-//			nc = nc + pos[i].xos;
-//		}
-//	}
-//	return ret;
-//}
-//void Find(int row)//·ÅÖÃ
-//{
-//	if (row > N)
-//	{
-//		Show();
-//		count++;
-//		printf("%d\n", count);
-//	}
-//	else
-//	{
-//		for (int col = 1; col <= N; col++)
-//		{
-//			if (Check(row, col))
-//			{
-//				board[row][col] = '*';
-//				Find(row + 1);
-//				board[row][col] = ' ';
-//			}
-//		}
-//	}
-//}
-// 
-// 
-//#include<stdio.h>
-//
-//#define N 8
-//char board[N + 2][N + 2];
-//int count = 0;
-//
-//struct Pos
-//{
-//    int yos;   //ĞĞÆ«ÒÆÁ¿
-//    int xos;   //ÁĞÆ«ÒÆÁ¿
-//};
-//
-//struct Pos pos[3] = { { -1, -1 }, { -1, 0 }, { -1, 1 } };
-//
-//
-//void Init(void)
-//{
-//    for (int row = 0; row < N + 2; row++)
-//    {
-//        for (int col = 0; col < N + 2; col++)
-//        {
-//            board[0][col] = '#';
-//            board[N + 1][col] = '#';
-//            board[row][0] = '#';
-//            board[row][N + 1] = '#';
-//        }
-//    }
-//    for (int i = 1; i <= N; i++)
-//    {
-//        for (int j = 1; j <= N; j++)
-//        {
-//            board[i][j] = ' ';
-//        }
-//    }
-//}
-//
-//void Show(void)
-//{
-//    for (int i = 0; i < N + 2; i++)
-//    {
-//        for (int j = 0; j < N + 2; j++)
-//        {
-//            printf("%c", board[i][j]);
-//        }
-//        printf("\n");
-//    }
-//}
-//
-//int Check(int row, int col)
-//{
-//    int ret = 1;
-//    int nr;
-//    int nc;
-//    for (int i = 0; i < 3 && ret; i++)
-//    {
-//        nr = row;
-//        nc = col;
-//        while (ret && board[nr][nc] != '#')
-//        {
-//            if (board[nr][nc] == '*')
-//            {
-//                ret = 0;
-//                break;
-//            }
-//            nr = nr + pos[i].yos;
-//            nc = nc + pos[i].xos;
-//        }
-//    }
-//    return ret;
-//}
-//
-//void Find(int row)
-//{
-//    if (row > N)
-//    {
-//        Show();
-//        count++;
-//        printf("%d\n", count);
-//    }
-//    else
-//    {
-//        for (int col = 1; col <= N; col++)
-//        {
-//            if (Check(row, col))
-//            {
-//                board[row][col] = '*';
-//                Find(row + 1);
-//                board[row][col] = ' ';
-//            }
-//        }
-//    }
-//}
-//
-//int main()
-//{
-//    Init();
-//    Find(1);
-//    system("pause");
-//
-//}
-
+//å…«çš‡åé—®é¢˜ï¼ˆå›æº¯ç®—æ³•ï¼‰
 #include<stdio.h>
 #define N 8
 void Init(void);
 void Show(void);
 int Check(int row, int col);
 void Find(int row);
-char board[N + 2][N + 2];//¶¨ÒåÒ»¸öÆåÅÌ8*8
+char board[N + 2][N + 2];//å®šä¹‰ä¸€ä¸ªæ£‹ç›˜8*8
 int count = 0;
 struct Pos
 {
-    int yos;//ĞĞÆ«ÒÆÁ¿
-    int xos;//ÁĞÆ«ÒÆÁ¿
+	int yos;//è¡Œåç§»é‡
+	int xos;//åˆ—åç§»é‡
 };
 struct Pos pos[3] = { {-1,-1},{-1,0},{-1,1} };
 int main()
 {
-    Init();
-    Find(1);
-    system("pause");
-    return 0;
+	Init();
+	Find(1);
+	system("pause");
+	return 0;
 }
-void Init(void)//³õÊ¼»¯ÆåÅÌ
+void Init(void)//åˆå§‹åŒ–æ£‹ç›˜
 {
-    for (int row = 0; row < N + 2; row++)
-    {
-        for (int col = 0; col < N + 2; col++)
-        {
-            board[0][col] = '#';
-            board[N + 1][col] = '#';
-            board[row][0] = '#';
-            board[row][N + 1] = '#';
-        }
-    }
-    for (int i = 1; i <= N; i++)
-    {
-        for (int j = 1; j <= N; j++)
-        {
-            board[i][j] = ' ';
-        }
-    }
+	for (int row = 0; row < N + 2; row++)
+	{
+		for (int col = 0; col < N + 2; col++)
+		{
+			board[0][col] = '#';
+			board[N + 1][col] = '#';
+			board[row][0] = '#';
+			board[row][N + 1] = '#';
+		}
+	}
+	for (int i = 1; i <= N; i++)
+	{
+		for (int j = 1; j <= N; j++)
+		{
+			board[i][j] = ' ';
+		}
+	}
 }
-void Show(void)//´òÓ¡ÆåÅÌ
+void Show(void)//æ‰“å°æ£‹ç›˜
 {
-    for (int i = 1; i <= N; i++)
-    {
-        for (int j = 1; j <= N; j++)
-        {
-            printf("%c", board[i][j]);
-        }
-        printf("\n");
-    }
+	for (int i = 0; i < N + 2; i++)
+	{
+		for (int j = 0; j < N + 2; j++)
+		{
+			printf("%c", board[i][j]);
+		}
+		printf("\n");
+	}
 }
-int Check(int row, int col)//¼ì²é¸ÃÎ»ÖÃÊÇ·ñÄÜ·ÅÖÃ
+int Check(int row, int col)//æ£€æŸ¥è¯¥ä½ç½®æ˜¯å¦èƒ½æ”¾ç½®
 {
-    int ret = 1;
-    int nr;
-    int nc;
-    for (int i = 0; i < 3 && ret; i++)
-    {
-        nr = row;
-        nc = col;
-        while (ret && board[nr][nc] != '#')
-        {
-            if (board[nr][nc] == '*')
-            {
-                ret = 0;
-            }
-            nr = nr + pos[i].yos;
-            nc = nc + pos[i].xos;
-        }
-    }
-    return ret;
+	int ret = 1;
+	int nr;
+	int nc;
+	for (int i = 0; i < 3 && ret; i++)
+	{
+		nr = row;
+		nc = col;
+		while (ret && board[nr][nc] != '#')
+		{
+			if (board[nr][nc] == '*')
+			{
+				ret = 0;
+				break;
+			}
+			nr = nr + pos[i].yos;
+			nc = nc + pos[i].xos;
+		}
+	}
+	return ret;
 }
-void Find(int row)//·ÅÖÃ
+void Find(int row)//æ”¾ç½®
 {
-    if (row > N)
-    {
-        Show();
-        count++;
-        printf("%d\n", count);
-    }
-    else
-    {
-        for (int col = 1; col <= N; col++)
-        {
-            if (Check(row, col))
-            {
-                board[row][col] = '*';
-                Find(row + 1);
-                board[row][col] = ' ';
-            }
-        }
-    }
+	if (row > N)
+	{
+		Show();
+		count++;
+		printf("%d\n", count);
+	}
+	else
+	{
+		for (int col = 1; col <= N; col++)
+		{
+			if (Check(row, col))
+			{
+				board[row][col] = '*';
+				Find(row + 1);
+				board[row][col] = ' ';
+			}
+		}
+	}
 }
+
 
 
 
